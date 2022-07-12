@@ -1,9 +1,3 @@
-# Docker tutorial part 2 docker compose 
+# Jupyter
 
-Commands for docker used in tutorial provided by ItGuyMichal
-https://www.youtube.com/watch?v=UBFiCfbRykE&feature=youtu.be
-
-Facebook:
-https://www.facebook.com/ItGuyMichal
-
-
+Ver en "localhost:8200"
