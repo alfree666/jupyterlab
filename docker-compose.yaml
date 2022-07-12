@@ -4,8 +4,9 @@ services:
 
   jupyter:
     build: ./jupyter
+    restart: unless-stopped
     ports:
-      - "8888:8888"
+      - "8200:8888"
     entrypoint:
       jupyter lab --ip='0.0.0.0' --port=8888 --no-browser --allow-root --NotebookApp.token='' --NotebookApp.password=''
     volumes: 
@@ -14,8 +15,8 @@ services:
       - ./jupyter/variables.env
 
   postgresql:
-    image: "postgres:12.4"
-    restart: always
+    image: "postgres:14"
+    restart: unless-stopped
     environment:
       POSTGRES_DB: test
       POSTGRES_USER: itguymichal
@@ -28,15 +29,17 @@ services:
 
   pgadmin:
     image: "dpage/pgadmin4:latest"
-    restart: always
+    restart: unless-stopped
     ports: 
-      - "80:80"
+      - "8000:80"
     environment:
-      PGADMIN_DEFAULT_EMAIL: itguymichal@itguymichal.com
-      PGADMIN_DEFAULT_PASSWORD: itguymichal
+      PGADMIN_DEFAULT_EMAIL: admin@example.com
+      PGADMIN_DEFAULT_PASSWORD: p4ssw0rd
     volumes:
       - pgadmin-data:/var/lib/pgadmin
       
 volumes:
   db-data:
   pgadmin-data:
+  
+  
