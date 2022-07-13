@@ -2,10 +2,12 @@
 
 Ver en "localhost:8200"
 
-pgadmin:
+pgAdmin:
     
 Ver en "localhost:8000"
 
-Email: admin@example.com
+Email Address: admin@example.com
 
 Password:  p4ssw0rd
+
+
